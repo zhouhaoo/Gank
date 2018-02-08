@@ -9,7 +9,7 @@ gank.io干货集中营Android客户端 by Kotlin
   - [ ] 原型设计
   - [ ] UI图
   - [ ] 功能开发
- - [ ] 完善README
+- [ ] 完善README
 ## 声明
 
 ## License
