@@ -1,0 +1,30 @@
+package com.zhouhaoo.gank.app
+
+import android.app.Application
+import android.content.Context
+import android.support.v4.app.FragmentManager
+import com.zhouhaoo.common.base.delegate.AppLifecycle
+import com.zhouhaoo.common.injection.moudle.ConfigModule
+import com.zhouhaoo.common.interfaces.AppConfig
+
+/**
+ * Created by zhou on 18/2/8.
+ */
+class AppConfigImpl : AppConfig {
+    override fun applyOptions(context: Context, module: ConfigModule) {
+
+    }
+
+    override fun injectActivityLifecycle(context: Context, actLifecycles: ArrayList<Application.ActivityLifecycleCallbacks>) {
+
+    }
+
+    override fun injectAppLifecycle(context: Context, appLifecycles: ArrayList<AppLifecycle>) {
+
+    }
+
+    override fun injectFragmentLifecycle(context: Context, fragLifecycles: ArrayList<FragmentManager.FragmentLifecycleCallbacks>) {
+
+    }
+
+}
