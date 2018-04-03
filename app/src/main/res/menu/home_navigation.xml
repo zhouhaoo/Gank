@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_navifgation_new"
+        android:id="@+id/navigation_home"
+        android:title="最新"/>
+    <item
+        android:id="@+id/navigation_category"
+        android:icon="@drawable/ic_navifgation_category"
+        android:title="分类"/>
+    <item
+        android:icon="@drawable/ic_navifgation_collect"
+        android:id="@+id/navigation_mine"
+        android:title="收藏"/>
+</menu>
