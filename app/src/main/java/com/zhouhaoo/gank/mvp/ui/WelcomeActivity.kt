@@ -6,6 +6,11 @@ import com.zhouhaoo.common.extensions.runDelayed
 import com.zhouhaoo.common.extensions.start
 import com.zhouhaoo.gank.R
 
+/**
+ * ## 启动页
+ *
+ * Created by Zhouhaoo on 2018/4/4.
+ */
 class WelcomeActivity : BaseActivity() {
 
     override fun useInject() = false
