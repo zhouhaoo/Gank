@@ -17,6 +17,7 @@
 package com.zhouhaoo.gank.injection.module
 
 import com.zhouhaoo.common.injection.ActivityScope
+import com.zhouhaoo.common.injection.FragmentScope
 import com.zhouhaoo.gank.mvp.ui.HomeActivity
 import com.zhouhaoo.gank.mvp.ui.NewFragment
 import dagger.Module
@@ -31,7 +32,7 @@ abstract class CoreMoudle {
     @ContributesAndroidInjector(modules = [HomePresenterModule::class])
     abstract fun contributeHomeActivity(): HomeActivity
 
-    @ActivityScope
-    @ContributesAndroidInjector(modules = [HomePresenterModule::class])
+    @FragmentScope
+    @ContributesAndroidInjector(modules = [NewPresenterModule::class])
     abstract fun contributeTestFragment(): NewFragment
 }
