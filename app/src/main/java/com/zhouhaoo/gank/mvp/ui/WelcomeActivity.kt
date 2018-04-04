@@ -7,7 +7,7 @@ import com.zhouhaoo.common.extensions.start
 import com.zhouhaoo.gank.R
 
 /**
- * ## 启动页
+ * ## 启动页,可以
  *
  * Created by Zhouhaoo on 2018/4/4.
  */
