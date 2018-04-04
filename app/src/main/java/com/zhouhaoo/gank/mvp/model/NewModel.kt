@@ -10,5 +10,8 @@ import javax.inject.Inject
  */
 @FragmentScope
 class NewModel @Inject constructor() : BaseModel(), NewContract.Model {
+    override fun getData() {
+
+    }
 
 }

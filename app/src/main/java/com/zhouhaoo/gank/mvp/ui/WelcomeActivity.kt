@@ -15,7 +15,6 @@ class WelcomeActivity : BaseActivity() {
 
     override fun useInject() = false
     override fun initView(savedInstanceState: Bundle?): Int {
-
         return R.layout.activity_welcome
     }
 
@@ -24,7 +23,6 @@ class WelcomeActivity : BaseActivity() {
             start<HomeActivity>(finishSelf = true)
         }
     }
-
 
     override fun hideLoading() {
     }

@@ -13,6 +13,7 @@ interface NewContract {
     }
 
     interface Model : IModel {
+        fun getData()
 
     }
 }
