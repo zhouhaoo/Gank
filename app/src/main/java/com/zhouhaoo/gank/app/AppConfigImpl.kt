@@ -9,6 +9,7 @@ import com.zhouhaoo.common.injection.moudle.ConfigModule
 import com.zhouhaoo.common.interfaces.AppConfig
 import com.zhouhaoo.gank.BuildConfig
 import okhttp3.internal.platform.Platform
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by zhou on 18/2/8.
@@ -20,6 +21,9 @@ class AppConfigImpl : AppConfig {
             httplogBuilder = {
                 loggable(BuildConfig.DEBUG).setLevel(Level.BODY).log(Platform.INFO)
                         .request("Request").response("Response")
+            }
+            okhttpBuilder = {
+                connectTimeout(30_000, TimeUnit.SECONDS)
             }
         }
     }

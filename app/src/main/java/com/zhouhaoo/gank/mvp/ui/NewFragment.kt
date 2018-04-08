@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.zhouhaoo.common.base.BaseMvpFragment
-import com.zhouhaoo.common.extensions.load
+import com.zhouhaoo.common.glide.GlideApp
 import com.zhouhaoo.gank.R
 import com.zhouhaoo.gank.mvp.contract.NewContract
 import com.zhouhaoo.gank.mvp.presenter.NewPresenter
+import com.zhouhaoo.gank.utils.putString
 import kotlinx.android.synthetic.main.fragment_new.*
 
 /**
@@ -25,8 +26,12 @@ class NewFragment : BaseMvpFragment<NewPresenter>(), NewContract.View {
     }
 
     override fun initData(savedInstanceState: Bundle?) {
-        var url = "http://7xi8d6.com1.z0.glb.clouddn.com/20171228085004_5yEHju_Screenshot.jpeg"
-        banner_home.load(url)
+        mPresenter.getRandomBanner()
+    }
+
+    override fun bannerUrl(url: String) {
+        GlideApp.with(this).downloadOnly().load(url).into(banner_home)
+        "banner_url".putString(url)
     }
 
     override fun showLoading() {

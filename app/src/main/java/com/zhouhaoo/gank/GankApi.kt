@@ -59,6 +59,6 @@ interface GankApi {
                    @Path(value = "count") count: Int): Observable<BaseData<MutableList<Data>>>
 }
 
-open class BaseData<T>(var error: Boolean, @SerializedName("results") var data: T)
+open class BaseData<T>(var error: Boolean, @SerializedName("results") var data: T, var msg: String)
 
 data class Data(var desc: String, var type: String, var url: String)

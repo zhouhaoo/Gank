@@ -20,6 +20,7 @@ import android.app.Application
 import android.content.Context
 import com.zhouhaoo.common.base.delegate.AppLifecycle
 import com.zhouhaoo.gank.BuildConfig
+import com.zhouhaoo.gank.utils.SPUtils
 import timber.log.Timber
 
 /**
@@ -30,6 +31,7 @@ class AppLifecycleImpl : AppLifecycle {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
+        SPUtils.init(context)
     }
 
     override fun onCreate(application: Application) {

@@ -1,10 +1,14 @@
 package com.zhouhaoo.gank.mvp.ui
 
 import android.os.Bundle
+import android.text.TextUtils
 import com.zhouhaoo.common.base.BaseActivity
+import com.zhouhaoo.common.extensions.load
 import com.zhouhaoo.common.extensions.runDelayed
 import com.zhouhaoo.common.extensions.start
 import com.zhouhaoo.gank.R
+import com.zhouhaoo.gank.utils.getString
+import kotlinx.android.synthetic.main.activity_welcome.*
 
 /**
  * ## 启动页
@@ -19,8 +23,14 @@ class WelcomeActivity : BaseActivity() {
     }
 
     override fun initData(savedInstanceState: Bundle?) {
-        runDelayed(1500) {
-            start<HomeActivity>(finishSelf = true)
+        val url = "banner_url".getString()
+        if (!TextUtils.isEmpty(url)) {
+            imageView.load(url)
+        }
+        runDelayed(2500) {
+            start<HomeActivity>()
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            finish()
         }
     }
 
