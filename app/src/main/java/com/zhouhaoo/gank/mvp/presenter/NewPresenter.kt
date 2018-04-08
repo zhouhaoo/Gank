@@ -16,6 +16,11 @@ class NewPresenter @Inject constructor(model: NewContract.Model, view: NewContra
      * 获取随机的banner图
      */
     fun getRandomBanner() {
+        mModel.getDate()
+                .execute(mView) {
+                    mView.historyData(it)
+//                    mModel.getGankData(it[0])
+                }
         mModel.getRandomData("福利", 1)
                 .execute(mView) {
                     mView.bannerUrl(it[0].url)

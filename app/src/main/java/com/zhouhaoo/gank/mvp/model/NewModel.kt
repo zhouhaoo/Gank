@@ -15,6 +15,11 @@ import javax.inject.Inject
  */
 @FragmentScope
 class NewModel @Inject constructor() : BaseModel(), NewContract.Model {
+    override fun getDate(): Observable<BaseData<MutableList<String>>> {
+        return repositoryManager
+                .create<GankApi>()
+                .historyData()
+    }
 
     override fun getRandomData(category: String, count: Int): Observable<BaseData<MutableList<Data>>> {
         return repositoryManager

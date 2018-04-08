@@ -12,10 +12,20 @@ import io.reactivex.Observable
 interface NewContract {
 
     interface View : IView {
+        /**
+         * 随机banner图
+         */
         fun bannerUrl(url: String)
+
+        /**
+         * 发过干货的历史日期
+         */
+        fun historyData(historyData: MutableList<String>)
     }
 
     interface Model : IModel {
         fun getRandomData(category: String, count: Int): Observable<BaseData<MutableList<Data>>>
+        fun getDate(): Observable<BaseData<MutableList<String>>>
+//        fun getGankData(date: String)
     }
 }
