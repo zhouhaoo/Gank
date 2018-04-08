@@ -1,17 +1,20 @@
 package com.zhouhaoo.gank.mvp.ui
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.zhouhaoo.common.base.BaseMvpFragment
+import com.zhouhaoo.common.extensions.start
 import com.zhouhaoo.common.glide.GlideApp
 import com.zhouhaoo.gank.R
+import com.zhouhaoo.gank.bean.NewsMultipleItem
 import com.zhouhaoo.gank.mvp.contract.NewContract
 import com.zhouhaoo.gank.mvp.presenter.NewPresenter
+import com.zhouhaoo.gank.mvp.ui.adapter.NewsMultipleItemAdapter
 import com.zhouhaoo.gank.utils.putString
 import kotlinx.android.synthetic.main.fragment_new.*
-import timber.log.Timber
 
 /**
  * ## 最新
@@ -27,9 +30,15 @@ class NewFragment : BaseMvpFragment<NewPresenter>(), NewContract.View {
         return R.layout.fragment_new
     }
 
+    private var adapter = NewsMultipleItemAdapter(emptyList())
+
     override fun initData(savedInstanceState: Bundle?) {
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.adapter = adapter
         mPresenter.getRandomBanner()
-//        mPresenter.getGankData()
+        iv_setting.setOnClickListener {
+            activity!!.start<SettingActivity>()
+        }
     }
 
     override fun bannerUrl(url: String) {
@@ -37,10 +46,14 @@ class NewFragment : BaseMvpFragment<NewPresenter>(), NewContract.View {
         "banner_url".putString(url)
     }
 
-    override fun historyData(historyData: MutableList<String>) {
+    override fun historyDate(historyData: MutableList<String>) {
+        mPresenter.getGankData(historyData[0])
         historyData.forEach {
-            Timber.e("历史数据日期:$it")
         }
+    }
+
+    override fun gankData(list: ArrayList<NewsMultipleItem>) {
+        adapter.setNewData(list)
     }
 
     override fun showLoading() {

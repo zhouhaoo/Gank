@@ -36,15 +36,15 @@ interface GankApi {
      *## 获取发过干货日期
      * 接口:http://gank.io/api/day/history
      */
-    @GET("data/history")
+    @GET("day/history")
     fun historyData(): Observable<BaseData<MutableList<String>>>
 
     /**
      *## 指定日期的数据
      * * calendar ： 格式：2018/01/01
      */
-    @GET("data/history/content/day/{calendar}")
-    fun calendarData(@Path("calendar") calendar: String): Observable<BaseData<MutableList<String>>>
+    @GET("day/{calendar}")
+    fun calendarData(@Path("calendar") calendar: String): Observable<BaseData<MutableMap<String, List<Data>>>>
 
     /**
      * ## 随机数据
@@ -61,4 +61,12 @@ interface GankApi {
 
 open class BaseData<T>(var error: Boolean, @SerializedName("results") var data: T, var msg: String)
 
-data class Data(var desc: String, var type: String, var url: String)
+data class Data(
+        var desc: String,
+        var type: String,
+        @SerializedName("publishedAt") var time: String,
+        var who: String,
+        var images: ArrayList<String>?,
+        var url: String)
+
+data class Image(var list: ArrayList<String>)
