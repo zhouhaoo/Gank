@@ -1,7 +1,9 @@
 # Gank
 gank.io干货集中营Android客户端 by Kotlin
 ## 截图
-[!](/art/device-2018-04-09-171828.png)
+
+![](/art/device-2018-04-09-171828.png)
+
 ## Library
 
 ## TODO
