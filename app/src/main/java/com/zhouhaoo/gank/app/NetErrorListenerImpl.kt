@@ -18,9 +18,9 @@ package com.zhouhaoo.gank.app
 
 import android.content.Context
 import android.net.ParseException
-import android.widget.Toast
 import com.google.gson.JsonIOException
 import com.google.gson.JsonParseException
+import com.zhouhaoo.common.extensions.longToast
 import com.zhouhaoo.common.interfaces.NetErrorListener
 import org.json.JSONException
 import retrofit2.HttpException
@@ -33,33 +33,34 @@ import java.net.UnknownHostException
 class NetErrorListenerImpl(private var context: Context) : NetErrorListener {
 
     override fun errorMessage(throwable: Throwable) {
-        Toast.makeText(context, throwable.message, Toast.LENGTH_LONG).show()
         throwable.printStackTrace()
+        var toastConcent: String
         when (throwable) {
             is UnknownHostException -> {
-
+                toastConcent = "连接错误，请检查网络。"
             }
             is SocketTimeoutException -> {
-
+                toastConcent = "连接超时，请检查网络。"
             }
             is HttpException -> {
-
+                toastConcent = "服务器错误，请稍后再试。"
             }
             is JsonParseException -> {
-
+                toastConcent = "数据解析错误,请稍后再试。"
             }
             is ParseException -> {
-
+                toastConcent = "数据解析错误,请稍后再试。"
             }
             is JSONException -> {
-
+                toastConcent = "数据解析错误,请稍后再试。"
             }
             is JsonIOException -> {
-
+                toastConcent = "数据解析错误,请稍后再试。"
             }
             else -> {
-
+                toastConcent = "未知错误,请稍后再试。"
             }
         }
+        context.longToast(toastConcent)
     }
 }

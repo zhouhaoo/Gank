@@ -15,6 +15,12 @@ import javax.inject.Inject
  */
 @FragmentScope
 class NewModel @Inject constructor() : BaseModel(), NewContract.Model {
+    override fun getGankData(urlDate: String): Observable<BaseData<MutableMap<String, List<Data>>>> {
+        return repositoryManager
+                .create<GankApi>()
+                .calendarData(urlDate)
+    }
+
     override fun getDate(): Observable<BaseData<MutableList<String>>> {
         return repositoryManager
                 .create<GankApi>()

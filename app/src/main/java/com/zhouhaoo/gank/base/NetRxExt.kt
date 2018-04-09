@@ -28,7 +28,7 @@ fun <T : Any> Observable<BaseData<T>>.execute(
         loadingStatus: Boolean = true,
         onNext: (T) -> Unit
 ): Disposable = subscribeOn(Schedulers.io())
-        .doOnSubscribe { iView.showLoading() }//显示加载
+        .doOnSubscribe { if (loadingStatus) iView.showLoading() }//显示加载
         .flatMap {
             return@flatMap if (!it.error) {
                 createData(it.data)
