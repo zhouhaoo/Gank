@@ -1,5 +1,6 @@
 package com.zhouhaoo.gank.mvp.presenter
 
+import android.text.TextUtils
 import com.zhouhaoo.common.injection.FragmentScope
 import com.zhouhaoo.common.mvp.BasePresenter
 import com.zhouhaoo.gank.base.execute
@@ -34,9 +35,11 @@ class NewPresenter @Inject constructor(model: NewContract.Model, view: NewContra
                     //处理成rlv的数据
                     var list = arrayListOf<NewsMultipleItem>()
                     it.forEach { type, data ->
-                        list.add(NewsMultipleItem(NewsMultipleItem.TEXT_TITLE, type))
-                        data.forEach {
-                            list.add(NewsMultipleItem(NewsMultipleItem.TEXT_DESC, it))
+                        if (!TextUtils.equals(type, "福利")) {
+                            list.add(NewsMultipleItem(NewsMultipleItem.TEXT_TITLE, type))
+                            data.forEach {
+                                list.add(NewsMultipleItem(NewsMultipleItem.TEXT_DESC, it))
+                            }
                         }
                     }
                     mView.gankData(list)

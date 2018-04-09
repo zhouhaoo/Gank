@@ -25,9 +25,8 @@ class NewsMultipleItemAdapter(data: List<NewsMultipleItem>)
                 val data = item.content
                 helper.setText(R.id.tv_desc, data.desc)
                         .setText(R.id.tv_who, data.who)
-                        .setText(R.id.tv_time, data.time)
+                        .setText(R.id.tv_time, data.time.substring(0, 10))
             }
         }
     }
-
 }
