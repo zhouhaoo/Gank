@@ -22,8 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".mvp.ui.HomeActivity"
-            android:label="标题"/>
+            android:name=".mvp.ui.HomeActivity"/>
         <activity android:name=".mvp.ui.SettingActivity"/>
 
         <meta-data

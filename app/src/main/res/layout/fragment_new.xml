@@ -20,6 +20,7 @@
             android:layout_height="match_parent"
             app:collapsedTitleGravity="center"
             app:contentScrim="@color/colorPrimary"
+            app:expandedTitleGravity="center_vertical"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
@@ -48,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="40dp"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="40dp"
                 android:background="@drawable/shape_corners_dark_background"
@@ -80,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="bottom|end"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="40dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:contentDescription="@null"
@@ -96,8 +97,7 @@
                 android:layout_marginTop="@dimen/status_bar_height"
                 android:minHeight="50dp"
                 app:layout_collapseMode="pin"
-                app:theme="@style/ToolbarTheme"
-                app:title="@string/newest">
+                app:theme="@style/ToolbarTheme">
             </android.support.v7.widget.Toolbar>
 
             <!--<TextView-->

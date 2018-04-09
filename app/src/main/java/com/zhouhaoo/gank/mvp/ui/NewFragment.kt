@@ -4,7 +4,6 @@ import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -64,6 +63,7 @@ class NewFragment : BaseMvpFragment<NewPresenter>(), NewContract.View {
     }
 
     override fun historyDate(historyData: MutableList<String>) {
+        collapsing_toolbar.title = historyData[0]
         mPresenter.getGankData(historyData[0])
     }
 
