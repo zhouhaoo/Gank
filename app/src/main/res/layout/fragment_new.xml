@@ -18,6 +18,8 @@
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:collapsedTitleGravity="center"
+            app:contentScrim="@color/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
@@ -26,32 +28,20 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@null"
                 android:scaleType="centerCrop"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier="0.4"/>
+                app:layout_collapseMode="pin"/>
 
             <android.support.v7.widget.AppCompatImageView
                 android:id="@+id/iv_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_gravity="right"
-                android:layout_marginRight="4dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="@dimen/setting_layout_marginTop"
                 android:contentDescription="@null"
                 android:padding="5dp"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="-0.5"
                 app:srcCompat="@drawable/ic_setting"/>
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                style="@style/MyToolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:paddingBottom="1dp"
-                app:layout_collapseMode="pin">
-            </android.support.v7.widget.Toolbar>
 
             <LinearLayout
                 android:id="@+id/ll_home_search"
@@ -98,6 +88,26 @@
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="-0.5"
                 app:srcCompat="@drawable/ic_collection"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/status_bar_height"
+                android:minHeight="50dp"
+                app:layout_collapseMode="pin"
+                app:theme="@style/ToolbarTheme"
+                app:title="@string/newest">
+            </android.support.v7.widget.Toolbar>
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="标题"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="20dp"/>-->
+
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 

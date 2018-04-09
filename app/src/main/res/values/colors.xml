@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">@color/colorPrimaryDark_below_23</color>
-    <color name="colorAccent">#123123</color>
-    <color name="colorPrimaryDark_below_23">#000000</color>
+    <color name="colorPrimary">#FF424242</color>
+    <color name="colorPrimaryDark">#FF424242</color>
+    <color name="colorAccent">#FF424242</color>
     <color name="colorPrimaryDark_23">#ededed</color>
 
     <color name="colormore">#000000</color>

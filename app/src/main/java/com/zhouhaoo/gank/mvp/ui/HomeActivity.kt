@@ -26,6 +26,7 @@ class HomeActivity : BaseMvpActivity<HomePresenter>(), HomeContract.View {
     override fun initData(savedInstanceState: Bundle?) {
         val fragmentList = arrayListOf(NewFragment(), CategoryFragment(), MineFragment())
         viewPager.adapter = HomePageAdapter(fragmentList, fragmentManager = supportFragmentManager)
+        viewPager.offscreenPageLimit = 2
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_home -> {
