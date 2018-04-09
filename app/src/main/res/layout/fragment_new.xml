@@ -82,7 +82,7 @@
                     android:paddingLeft="3dp"
                     android:paddingRight="3dp"
                     android:singleLine="true"
-                    android:text="@string/gank_search"/>
+                    android:text="@string/gank_search" />
             </LinearLayout>
 
             <android.support.v7.widget.AppCompatImageView
