@@ -1,6 +1,8 @@
 package com.zhouhaoo.gank.mvp.ui
 
+import android.graphics.Color
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -39,6 +41,14 @@ class NewFragment : BaseMvpFragment<NewPresenter>(), NewContract.View {
         iv_setting.setOnClickListener {
             activity!!.start<SettingActivity>()
         }
+        if (activity is AppCompatActivity) {
+            (activity as AppCompatActivity).setSupportActionBar(toolbar)
+//            (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        }
+        collapsing_toolbar.title = "hahahahahah"
+        collapsing_toolbar.setExpandedTitleColor(Color.WHITE)//设置还没收缩时状态下字体颜色
+        collapsing_toolbar.setCollapsedTitleTextColor(Color.BLACK)//
     }
 
     override fun bannerUrl(url: String) {
@@ -48,8 +58,6 @@ class NewFragment : BaseMvpFragment<NewPresenter>(), NewContract.View {
 
     override fun historyDate(historyData: MutableList<String>) {
         mPresenter.getGankData(historyData[0])
-        historyData.forEach {
-        }
     }
 
     override fun gankData(list: ArrayList<NewsMultipleItem>) {
