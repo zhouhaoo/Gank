@@ -52,9 +52,10 @@ class NewFragment : BaseMvpFragment<NewPresenter>(), NewContract.View {
         iv_setting.setOnClickListener {
             activity!!.start<SettingActivity>()
         }
-        appBarLayout.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
-
-        }
+        //滑动监听。
+//        appBarLayout.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
+//
+//        }
     }
 
     override fun bannerUrl(url: String) {
@@ -63,6 +64,7 @@ class NewFragment : BaseMvpFragment<NewPresenter>(), NewContract.View {
     }
 
     override fun historyDate(historyData: MutableList<String>) {
+//        collapsing_toolbar.title = historyData[0]
         collapsing_toolbar.title = historyData[0]
         mPresenter.getGankData(historyData[0])
     }
