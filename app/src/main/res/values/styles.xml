@@ -1,11 +1,52 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <!--<item name="toolbarBackground">@color/toolbarBackground</item>-->
+        <!--<item name="toolbarTextColor">@color/toolbarTextColor</item>-->
+        <!--<item name="toolbarMenuTint">@color/toolbarMenuTint</item>-->
+        <!--<item name="tabIndicatorColor">@color/tabIndicatorColor</item>-->
+        <!--<item name="tabBackground">@color/tabBackground</item>-->
+        <!--<item name="tabTextColor">@color/tabTextColor</item>-->
+        <!--<item name="overflowHeaderColor">@color/overflowHeaderColor</item>-->
+        <item name="android:navigationBarColor"
+              tools:targetApi="lollipop">@color/immersive_bars
+        </item>
+        <item name="android:windowLightStatusBar"
+              tools:targetApi="m">true
+        </item>
+    </style>
+    <!--去标题栏-->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+    <!--全屏显示-->
+    <style name="AppTheme.NoActionBar.FullScreen">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <style name="tv_sub">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@id/tv_desc</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 </resources>
